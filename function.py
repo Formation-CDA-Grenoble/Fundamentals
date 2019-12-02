@@ -30,8 +30,9 @@ def displayElements(list):
         print(element)
 
 
+# Commentaires inutiles, mais importants à versionner quand même
 resultat = addNumbers(-6, addNumbers(2, 5))
 print("resultat =", resultat)
 print("resultat est-il positif?", isPositive(resultat))
 
-displayElements( [4, 12, 15, 37] )
+displayElements( [4, 12, 15, 37, 56, 121] )
