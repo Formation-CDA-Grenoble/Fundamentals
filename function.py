@@ -25,11 +25,6 @@ def isPositive(number):
         return None
 
 
-def displayElements(list):
-    for element in list:
-        print(element)
-
-
 # Commentaires inutiles, mais importants à versionner quand même
 resultat = addNumbers(-6, addNumbers(2, 5))
 print("resultat =", resultat)
