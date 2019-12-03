@@ -13,6 +13,10 @@ text = "Ceci est une chaine de caractères"  # String
 liste1 = (4, 7, 12, 25)     # Tuple
 liste2 = [4, 7, 12, 25]     # List
 
-print(liste1[-1])
+# Récupérer le 1er élément d'une list
+liste2[0]
+# Récupérer le dernier élément d'une list
+liste2[-1]
 
+# Afficher le contenu d'une variable dans la console
 print(nombreEntier + nombreReel)
