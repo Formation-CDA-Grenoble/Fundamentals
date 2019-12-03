@@ -1,19 +1,26 @@
 # Fundamentals
  
-## Truc
+## Utilisation de Github
 
-### Machin
+### Créer un dépôt Git
 
-Texte _italique_
+Pour commencer à versionner mon code, je peux créer un dépôt Git dans mon dossier de travail grâce à la commande `git init`
 
-Texte **gras**
+Ou bien, dans Github Desktop, **File > New repository**
 
-> Citation
+### Enregister mon travail
 
-Liste:
+Je peux demander à Git de garder une trace de toutes les modifications que j'ai effectuées dans mon dépôt Git grâce aux commandes:
+```
+git add .
+git commit -m "message"
+```
+Où `message` doit être remplacé par un message décrivant les modifications que je souhaite enregistrer.
 
-1. 1er élément
-2. 2ème élément
-3. 3ème élément
+Ou bien, dans Github Desktop, je rentre mon message dans le volet de droite, à la place de "Commit message", et je clique sur le bouton **Commit**.
 
-`code`
+### Envoyer mon travail sur Github
+
+Je peux envoyer une copie de mon travail enregistré sur Github pour que d'autres personnes puissent le voir et y participer avec la commande `git push`.
+
+Ou bien, dans Github Desktop, je clique sur le bouton **Push origin** dans la barre en haut à droite.
