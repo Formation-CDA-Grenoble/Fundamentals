@@ -1,19 +1,24 @@
-def function1(n):
+# Renvoie la n-ème lettre de l'alphabet (en partant de 0)
+def getLetter(number):
     alphabet = (
         "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" 
     )
-    return alphabet[n]
+    return alphabet[number]
 
-def function2():
-    return function1(7) + function1(4) + function1(24)
+# Renvoie le mot "hey"
+def getHey():
+    return getLetter(7) + getLetter(4) + getLetter(24)
 
-def function3(n):
-    return function2() + " " + n
+# Renvoie "hey" suivi du nom passé en paramètre
+def getHeyName(name):
+    return getHey() + " " + name
 
-def function4(n):
-    if n < 1:
+# Renvoie la n-ème lettre de l'alphabet (à partir de 1) en vérifiant
+# que la valeur n est bien comprise entre 1 et 26
+def getLetterFrom1(number):
+    if number < 1:
         return None
-    elif n > 26:
+    elif number > 26:
         return None
     else:
-        return function1(n - 1)
+        return getLetter(number - 1)
