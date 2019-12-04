@@ -46,11 +46,11 @@ def isLegal(age):
 
 
 # Commentaires inutiles, mais importants à versionner quand même
-resultat = addNumbers(-6, addNumbers(2, 5))
-print("resultat =", resultat)
-print("resultat est-il positif?", isPositive(resultat))
+# resultat = addNumbers(-6, addNumbers(2, 5))
+# print("resultat =", resultat)
+# print("resultat est-il positif?", isPositive(resultat))
 
-displayElements( [4, 12, 15, 37, 56, 121] )
+# displayElements( [4, 12, 15, 37, 56, 121] )
 
 
 def displayAges(ages):
@@ -68,5 +68,26 @@ def displayAges(ages):
             print("tarif spécial")
 
 
-displayAges( (15, 17, 21) )
-displayAges( (3, 12, 21, 15, 53, 62, 9, 0, 18, 75) )
+# displayAges( (15, 17, 21) )
+# displayAges( (3, 12, 21, 15, 53, 62, 9, 0, 18, 75) )
+
+
+# Fonction permettant de calculer si le poids total de nos colis est trop lourd pour l'ascenseur
+def isTooHeavy(boxes):
+    # Initialise le poids actuel à zéro
+    currentWeight = 0
+    # Pour chaque élément de la liste
+    for weight in boxes:
+        # Ajoute le poids du carton au poids actuel
+        currentWeight = currentWeight + weight
+        # Si le poids actuel dépasse 100 kg
+        if currentWeight > 100:
+            # Renvoie vrai
+            return True
+    # Renvoie faux
+    return False
+
+print(isTooHeavy([11, 25, 45, 3, 63, 24]))  # Trop lourd
+print(isTooHeavy([99]))  # Pas trop lourd
+print(isTooHeavy([120]))  # Trop lourd
+print(isTooHeavy([13, 24, 32])) # Pas trop lourd
