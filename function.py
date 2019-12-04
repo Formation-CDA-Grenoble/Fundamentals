@@ -46,9 +46,9 @@ def isLegal(age):
 
 
 # Commentaires inutiles, mais importants à versionner quand même
-# resultat = addNumbers(-6, addNumbers(2, 5))
-# print("resultat =", resultat)
-# print("resultat est-il positif?", isPositive(resultat))
+resultat = addNumbers(-6, addNumbers(2, 5))
+print("resultat =", resultat)
+print("resultat est-il positif?", isPositive(resultat))
 
 # displayElements( [4, 12, 15, 37, 56, 121] )
 
@@ -68,20 +68,20 @@ def displayAges(ages):
             print("tarif spécial")
 
 
-# displayAges( (15, 17, 21) )
-# displayAges( (3, 12, 21, 15, 53, 62, 9, 0, 18, 75) )
+displayAges( (15, 17, 21) )
+displayAges( (3, 12, 21, 15, 53, 62, 9, 0, 18, 75) )
 
 
 # Fonction permettant de calculer si le poids total de nos colis est trop lourd pour l'ascenseur
-def isTooHeavy(boxes):
+def isTooHeavy(boxes, totalWeight = 100):
     # Initialise le poids actuel à zéro
     currentWeight = 0
-    # Pour chaque élément de la liste
+    # Pour chaque carton
     for weight in boxes:
         # Ajoute le poids du carton au poids actuel
         currentWeight = currentWeight + weight
         # Si le poids actuel dépasse 100 kg
-        if currentWeight > 100:
+        if currentWeight > totalWeight:
             # Renvoie vrai
             return True
     # Renvoie faux
@@ -91,3 +91,40 @@ print(isTooHeavy([11, 25, 45, 3, 63, 24]))  # Trop lourd
 print(isTooHeavy([99]))  # Pas trop lourd
 print(isTooHeavy([120]))  # Trop lourd
 print(isTooHeavy([13, 24, 32])) # Pas trop lourd
+
+
+# Détermine le nombre minimal de voyages en ascenseur pour envoyer les colis dans l'ordre
+# dès que la collection de colis dépasse 100kg
+def travels(boxes, totalWeight = 100):
+    # Initialise le nombre de voyages
+    travels = 1
+    # Initialise le poids actuel à zéro
+    currentWeight = 0
+    # Pour chaque carton
+    for weight in boxes:
+        # Ajoute le poids du carton au poids actuel
+        currentWeight = currentWeight + weight
+        # Si le poids actuel est supérieur à 100
+        if currentWeight >= totalWeight:
+            # Incrémente (ajouter 1 à) le nombre de voyages
+            travels += 1    # travels = travels + 1
+            # Réinitialise le poids actuel
+            currentWeight = 0
+    # Renvoie le nombre de voyages
+    return travels
+
+print(travels([11, 25, 45, 20, 63, 24, 15, 34]))  # 3
+print(travels([99]))  # 1
+print(travels([54, 52, 43])) # 2
+print(travels([13, 24, 32])) # 1
+
+
+def findName(names, searchedName):
+    n = 0
+    for name in names:
+        if name == searchedName:
+            return n    # ou break si on est en-dehors d'une fonction
+        n += 1
+    return -1
+
+print(findName(["Jean-Pierre", "Mireille", "Gertrude", "Michel", "Paul", "Jules", "Antoine"], "Martin"))
